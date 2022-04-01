@@ -6,7 +6,6 @@ import tkinter as tk
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 def update(data):
     tree.delete(*tree.get_children())
     for rij in data:
@@ -35,7 +34,7 @@ def genre_selecteren(genre):
 root = tk.Tk()
 root.title(('Steam'))
 root.minsize(width=300, height=400)
-root.resizable(width = 0, height = 0)
+root.resizable(width=0, height=0)
 root.geometry('620x680')
 myjsonfile = open('C:/Users/Moham/PycharmProjects/pythonProject1/steam.json', 'r')
 jsondata = myjsonfile.read()
@@ -53,7 +52,7 @@ root.iconbitmap('C:/Users/Moham/Documents/Opdrachten om in te leveren/steamicon.
 spel_zoeken = Label(root, text= "Zoek een spel", font = ("Helvetica", 15))
 spel_zoeken.pack(pady =0, ipady =10, ipadx=10)
 
-my_entry= Entry(root, font= ("Helvetica", 20))
+my_entry = Entry(root, font= ("Helvetica", 20))
 my_entry.pack(pady= '20')
 
 thema = ttk.Style()
@@ -102,9 +101,10 @@ def graph():
     plt.boxplot(i['price'])
     plt.show()
 
+# prijs functie
 def prijs():
-    knop = Button(root, text="Prijzen", command=graph)
-    knop.pack()
+    Button = Button(root, text="Prijzen", command=graph)
+    Button.pack()
 
 # statistiek knop
 stat_menu = Menu(my_menu)
@@ -113,7 +113,8 @@ stat_menu.add_command(label="Prijzen", command=prijs)
 
 # account functie
 def account():
-    my_label = Label(root, text="Je bent online!").pack()
+    lbl_account = Label(root, text="Je bent online!").pack()
+    lbl_account.pack()
 
 # frame functie
 def nieuw_frame():
@@ -133,7 +134,6 @@ acc_menu.add_separator()
 acc_menu.add_command(label="Overzicht", command=nieuw_frame)
 acc_menu.add_separator()
 acc_menu.add_command(label="Log uit", command=root.quit)
-
 
 # frame maken
 new_frame = Frame(root, width=400, height=400, bg='green')
